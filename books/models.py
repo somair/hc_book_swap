@@ -2,10 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
-from django.template.defaultfilters import slugify
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from datetime import datetime
-from books.utils import check_isbn
 
 class Subject(models.Model):
     name = models.CharField(max_length=128, unique=True)
@@ -28,7 +26,7 @@ class Book(models.Model):
     condition = models.CharField(max_length=20)
     course = models.ForeignKey(Course)
     description = models.TextField(default="No description.")
-    isbn = models.IntegerField(default=0)
+    isbn = models.CharField(max_length=20,default=".")
     listed_by = models.ForeignKey(User, default=1)
     name = models.CharField(max_length=200)
     price = models.IntegerField(default=0)
