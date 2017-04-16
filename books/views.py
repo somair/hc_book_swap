@@ -3,11 +3,12 @@ from django.conf import settings
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
-from books.models import Book
+from books.models import Book, Subject
 from books.forms import BookForm
 
 def index(request):
     book_list = Book.objects.filter(sold=False)
+    subject_list = Subject.objects.all()
     paginator = Paginator(book_list, 10)
     page = request.GET.get('page')
     try:
@@ -16,7 +17,10 @@ def index(request):
         books = paginator.page(1)
     except EmptyPage:
         books = paginator.page(paginator.num_pages)
-    context_dict = {'books': books, 'conditions': settings.CONDITION_CHOICES}
+    context_dict = {'books': books,
+        'conditions': settings.CONDITION_CHOICES,
+        'subjects': subject_list,
+    }
     return render(request, 'books/listings.html', context_dict)
 
 def detail(request, book_id):
