@@ -9,6 +9,7 @@ from books.forms import BookForm
 def index(request):
     book_list = Book.objects.filter(sold=False)
     subject_list = Subject.objects.all()
+    condition_list = (conditions[0] for conditions in settings.CONDITION_CHOICES)
     paginator = Paginator(book_list, 10)
     page = request.GET.get('page')
     try:
@@ -18,7 +19,7 @@ def index(request):
     except EmptyPage:
         books = paginator.page(paginator.num_pages)
     context_dict = {'books': books,
-        'conditions': settings.CONDITION_CHOICES,
+        'conditions': condition_list,
         'subjects': subject_list,
     }
     return render(request, 'books/listings.html', context_dict)
