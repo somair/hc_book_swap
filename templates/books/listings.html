@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}HC Book Swap{% endblock %}
+
+{% block body %}
+    <div class="row item-display">
+        <!-- Start row -->
+        <div class="two columns">
+            <h5 class="secondary-heading">Filter</h5>
+            <h6 class="secondary-heading">Subject</h6>
+            <form>
+                <label for="english" class="hc-checkbox">
+                    <input id="listing-english" type="checkbox"> <span>English</span>
+                    </input>
+                </label>
+                <label for="math" class="hc-checkbox">
+                    <input id="listing-math" type="checkbox"> <span>Math</span>
+                    </input>
+                </label>
+                <label for="science" class="hc-checkbox">
+                    <input id="listing-science" type="checkbox"> <span>Science</span>
+                    </input>
+                </label>
+                <label for="social-studies" class="hc-checkbox">
+                    <input id="listing-social-studies" type="checkbox"> <span>Social Studies</span>
+                    </input>
+                </label>
+                <label for="world-languages" class="hc-checkbox">
+                    <input id="listing-world-languages" type="checkbox"> <span>World Languages</span>
+                    </input>
+                </label>
+                <label for="other" class="hc-checkbox">
+                    <input id="listing-other" type="checkbox"> <span>Other</span>
+                    </input>
+                </label>
+            </form>
+            <h6 class="secondary-heading">Condition</h6>
+            <form>
+                {% for condition in conditions %}
+                    <label value="{{ condition }}" class="hc-checkbox">
+                        <input type="checkbox"> <span>{{ condition }}</span>
+                        </input>
+                    </label>
+                {% endfor %}
+            </form>
+        </div>
+        <div class="ten columns">
+             <h5 class="secondary-heading">Listings</h5>
+            {% for book in books %}
+                {% include 'books/snippets/listing.html' with book=book public=True %}
+            {% endfor %}
+            <div class="pagination">
+                <span class="step-links">
+                    {% if books.has_previous %}
+                        <a class="hc-button" href="?page={{ books.previous_page_number }}">previous</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ books.number }} of {{ books.paginator.num_pages }}
+                    </span>
+            
+                    {% if books.has_next %}
+                        <a class="hc-button" href="?page={{ books.next_page_number }}">next</a>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+    </div> <!-- End row -->
+
+{% endblock %}

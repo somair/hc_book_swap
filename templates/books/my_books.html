@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}My Books{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="three columns">
+        <h5>{{ user.username }}'s Books</h5>
+        <span><strong>Email:</strong> {{ user.email }}</span>
+    </div>
+    <div class="nine columns">
+        {% for book in books %}
+                {% include 'books/snippets/listing.html' with book=book public=False %}
+        {% endfor %}
+    </div>
+  </div>
+{% endblock %}

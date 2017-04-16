@@ -1,0 +1,4 @@
+Django==1.9
+django-unused-media==0.1.6
+Pillow=4.1.0
+django-imagekit==4.0

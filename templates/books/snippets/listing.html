@@ -1,0 +1,32 @@
+<div class="book-listing">
+    <div class="row">
+        <div class="three columns">
+            <img class="book-thumbnail" src="{{ book.thumbnail.url }}">
+        </div>
+        <div class="seven columns">
+            <h5 class="secondary-heading book-name">{{ book.name }}</h5>
+            <span class="book-author">by {{ book.author }}</span>
+            <ul class="book-properties">
+                <li><strong>Class:</strong> {{ book.course }}</li>
+                <li><strong>ISBN:</strong> {{ book.isbn }}</li>
+                <li><strong>Condition:</strong> {{ book.condition }}</li>
+            </ul>
+        </div>
+        <div class="two columns">
+            {% if public == True %}
+                <span class="book-seller">Listed by {{ book.listed_by }}</span>
+                <h5 class="secondary-heading book-price">${{ book.price }}</h5>
+                <a href="{% url 'detail' book.id %}" class="hc-button">Buy</a>
+            {% else %}
+                {% if book.sold %}
+                    <strong>Sold</strong>
+                {% else %}
+                    <strong>Not Sold</strong>
+                {% endif %}
+                <h5 class="secondary-heading book-price">${{ book.price }}</h5>
+                <a href="{% url 'edit_book' book.id %}" class="hc-button">Edit</a>
+                <a href="{% url 'delete_book' book.id %}" class="hc-button">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

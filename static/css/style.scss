@@ -1,0 +1,140 @@
+// Variables
+$primary-color: #D12E2A;
+$secondary-color: #575757;
+$disabled-color: #BABABA;
+$heading-font-family: 'Montserrat', 'Roboto', Arial, sans-serif !important;
+$paragraph-font-family: 'Roboto', Arial, sans-serif !important;
+$shadow-color: rgba(0,0,0,.15);
+
+// Content container
+.content{
+  box-shadow: 0px 0px 3px 0px $shadow-color;
+  margin: 0px auto;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+::selection {
+  background: $primary-color;
+  color: #FFFFFF;
+}
+::-moz-selection {
+  background: $primary-color;
+  color: #FFFFFF;
+}
+
+// Inner content styling (under top menu)
+.inner-content{
+  padding: 3em 1em 5em 1em;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6{
+  font-family: $heading-font-family;
+}
+a{
+  color: $primary-color;
+  text-decoration: none;
+  &:hover{
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}
+p, a, span, input[type=submit], li, strong{
+  font-family: $paragraph-font-family;
+}
+p, a, span, input[type=submit], li{
+  font-weight: 400;
+}
+.title-heading a{
+  color: $primary-color !important;
+  font-family: $heading-font-family;
+  text-decoration: none;
+}
+.secondary-heading{
+  color: $secondary-color;
+}
+
+.hc-help-text{
+  color: $disabled-color;
+}
+
+// Top menu styling
+.top-menu{
+  padding-top: 2rem;
+  box-shadow: 0px 1px 0px 0px $shadow-color;
+}
+
+// Buttons
+a.hc-button, input[type=submit]{
+    background: $primary-color;
+    border: 1px solid $shadow-color;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 $shadow-color;
+    color: #fff;
+    padding: .5em 1em;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: 200ms ease;
+    &:hover{
+      background: lighten($primary-color, 5%);
+      box-shadow: 2px 4px 3px 0 darken($shadow-color, 100%);
+    }
+}
+
+a.hc-button-disabled {
+  background: $disabled-color;
+  box-shadow: none;
+  color: darken($disabled-color, 30%);
+  cursor: default;
+  &:hover{
+    background: $disabled-color;
+    box-shadow: none;
+  }
+}
+
+// Index page book listings filter styling
+
+// Index page book listings
+.item-display{
+  padding: 1em 1em;
+}
+.book-thumbnail{
+  box-shadow: 0 1px 2px 0 $shadow-color;
+  width: 70%;
+}
+.book-image{
+  box-shadow: 0 1px 2px 0 $shadow-color;
+  width: 90%;
+}
+.book-properties{
+    list-style-type: none;
+    padding-top: 1em;
+}
+.book-listing{
+  box-shadow: 0 1px 1px 0 $shadow-color;
+  padding: 2em 2em 2em 2em;
+  .book-name, .book-author{
+    display: inline;
+  }
+  .book-author{
+    padding-left: 0.5em;
+  }
+  .book-price{
+    margin-top: 0.4em;
+  }
+}
+.pagination{
+  text-align: center;
+  padding: 2em 2em 2em 2em;
+}
+
+// Forms
+
+.hc-form{
+  margin: 0px auto;
+}
+
+// Footer styling
+footer span a{
+  padding-right: 2em;
+}

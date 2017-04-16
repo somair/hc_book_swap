@@ -1,0 +1,48 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/skeleton.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto">
+        <link rel="icon" href="{% static 'images/favicon.ico' %}" />
+    </head>
+    <body>
+        <div class="content">
+            <div class="row top-menu"> <!-- Start row -->
+                <div>
+                    <div class="two columns">
+                        <h5 class="title-heading"><a href="{% url 'index' %}">HC Book Swap</a></h5>
+                    </div>
+                    <div class="ten columns">
+                        <a href="{% url 'add_book' %}" class="hc-button">Sell a Book</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'my_books' %}" class="hc-button">My Books</a>
+                            <a href="{% url 'logout' %}" class="hc-button">Logout</a>
+                        {% else %}
+                            <a href="#" class="hc-button">Register</a>
+                            <a href="{% url 'login' %}" class="hc-button">Login</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div> <!-- End row -->
+            <div class="inner-content">
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+    <footer>
+        <div class="content">
+            <div class="inner-content">
+                <h6 class="secondary-heading">Hinsdale Central High School, Hinsdale, Illinois</h6>
+                <p>Buy and sell textbooks from fellow students.</p>
+                <span>
+                    <a href="#">Disclaimer</a>
+                    <a href="#">Contact</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,11 @@
+*.DS_Store
+*.pyc
+.ebextensions/
+.elasticbeanstalk/
+.idea/
+*.egg-info
+*.sqlite3
+*.sqlite
+hc_books/secrets.py
+*.css.map
+.sass-cache/
