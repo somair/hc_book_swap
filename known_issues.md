@@ -10,3 +10,4 @@
 - Make 404 page
 - Fix media breakpoints
 - Fix format of condition tuples in listings.html
+- Integrate Mailgun API to deal with response when "Contact Seller" is clicked

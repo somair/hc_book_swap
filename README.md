@@ -4,6 +4,8 @@ HC Book Swap is a Django web application for exchanging textbooks at Hinsdale Ce
 
 ## Features Implemented
 
+The following features will be implemented when the project is completed.
+
 - Ability to add and crop book listing thumbnails
 - Verification of ISBN numbers
 - Ability to easily edit and remove listings
