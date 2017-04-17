@@ -21,7 +21,7 @@
                             <a href="{% url 'my_books' %}" class="hc-button">My Books</a>
                             <a href="{% url 'logout' %}" class="hc-button">Logout</a>
                         {% else %}
-                            <a href="#" class="hc-button">Register</a>
+                            <a href="{% url 'register' %}" class="hc-button">Register</a>
                             <a href="{% url 'login' %}" class="hc-button">Login</a>
                         {% endif %}
                     </div>
