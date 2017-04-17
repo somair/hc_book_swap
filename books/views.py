@@ -52,7 +52,7 @@ def my_books(request):
 
 def edit_book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
-    if request.method == 'POST' and request.user is book.listed_by:
+    if request.method == 'POST' and request.user==book.listed_by:
         form = BookForm(request.POST, instance=book)
         if form.is_valid():
             book = form.save(commit=False)
@@ -64,6 +64,6 @@ def edit_book(request, book_id):
 
 def delete_book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
-    if request.user is book.listed_by:
+    if request.user==book.listed_by:
         book.delete()
-    return my_books(request)
+    return index(request)
