@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'books',
     'login',
     'django_unused_media',
+    'captcha',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -146,3 +147,7 @@ CONDITION_CHOICES = (
     ('Good','Good'),
     ('Acceptable','Acceptable'),
 )
+
+RECAPTCHA_PUBLIC_KEY = secrets.RECAPTCHA_PUBLIC_KEY
+RECAPTCHA_PRIVATE_KEY = secrets.RECAPTCHA_PRIVATE_KEY
+NOCAPTCHA = True

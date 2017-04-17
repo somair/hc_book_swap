@@ -34,4 +34,6 @@ Create a secrets.py file in hc_books and add the following information
 ```
 MAILGUN_API_KEY = 'YourAPIKeyHere'
 SECRET_KEY = 'YourSecretKey'
+RECAPTCHA_PUBLIC_KEY = 'YourReCaptchaSiteKey'
+RECAPTCHA_PRIVATE_KEY = 'YourReCaptchaSecretKey'
 ```

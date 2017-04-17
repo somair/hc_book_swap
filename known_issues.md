@@ -1,6 +1,7 @@
 # Known Issues
 
-- Implement captcha to register/login/add/edit
+- Add captcha to login page
+- Add password reset view
 - Need to implement pagination and figure out how to do it with client-side filtering
 - Form input button - fix styling
 - Style checkboxes
