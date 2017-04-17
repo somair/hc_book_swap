@@ -1,6 +1,8 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+from django.views.generic import TemplateView
+
 from books import views
 from login import views
 
@@ -9,5 +11,7 @@ urlpatterns = [
     url(r'^login/', auth_views.login, name='login'),
     url(r'^logout/', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^register/', views.register, name='register'),
+    url(r'^contact/', TemplateView.as_view(template_name='static_pages/contact.html'), name='contact'),
+    url(r'^disclaimer/', TemplateView.as_view(template_name='static_pages/disclaimer.html'), name='disclaimer'),
     url(r'^', include('books.urls'))
 ]
