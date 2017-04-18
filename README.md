@@ -36,4 +36,5 @@ MAILGUN_API_KEY = 'YourAPIKeyHere'
 SECRET_KEY = 'YourSecretKey'
 RECAPTCHA_PUBLIC_KEY = 'YourReCaptchaSiteKey'
 RECAPTCHA_PRIVATE_KEY = 'YourReCaptchaSecretKey'
+ALLOWED_HOSTS = []
 ```

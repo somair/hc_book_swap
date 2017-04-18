@@ -10,8 +10,8 @@
                 {{ hidden }}
             {% endfor %}
             {% for field in form.visible_fields %}
-                {{ field.errors }}
-                {{ field.help_text }}
+                <div class="errors">{{ field.errors }}</div>
+                <h6 class="hc-help-text">{{ field.help_text }} </h6>
                 {{ field }}
                 <br />
             {% endfor %}

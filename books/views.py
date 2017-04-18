@@ -52,12 +52,15 @@ def my_books(request):
 
 def edit_book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
-    if request.method == 'POST' and request.user==book.listed_by:
-        form = BookForm(request.POST, instance=book)
-        if form.is_valid():
-            book = form.save(commit=False)
-            book.save()
-            return my_books(request)
+    if request.user==book.listed_by:
+        if request.method == 'POST':
+            form = BookForm(request.POST, instance=book)
+            if form.is_valid():
+                book = form.save(commit=False)
+                book.save()
+                return my_books(request)
+        else:
+            form = BookForm(instance=book)
     else:
         return index(request)
     return render(request, 'books/edit_book.html', {'form': form, 'book': book})

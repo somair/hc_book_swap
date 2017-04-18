@@ -3,6 +3,9 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.staticfiles.templatetags.staticfiles import static
+#from imagekit.models import ImageSpecField
+#from imagekit.processors import ResizeToFill
+# https://github.com/matthewwithanm/django-imagekit << implement tomorrow in class
 from datetime import datetime
 
 class Subject(models.Model):
@@ -32,6 +35,6 @@ class Book(models.Model):
     price = models.IntegerField(default=0)
     sold = models.BooleanField(default=False)
     submitted = models.DateField(default=datetime.today)
-    thumbnail = models.ImageField(upload_to="books/thumbnails", default=static('images/books/default_book_image.png'))
+    thumbnail = models.ImageField(upload_to="books/thumbnails", default='books/thumbnails/default_book_image.png')
     def __str__(self):
         return 'Title: %s, Condition: %s, Price %s, ISBN %s' % (self.name, self.condition, self.price, self.isbn)
