@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
 #from imagekit.models import ImageSpecField
 #from imagekit.processors import ResizeToFill
@@ -26,7 +27,7 @@ class Course(models.Model):
 
 class Book(models.Model):
     author = models.CharField(max_length=128)
-    condition = models.CharField(max_length=20)
+    condition = models.CharField(max_length=20, choices=settings.CONDITION_CHOICES)
     course = models.ForeignKey(Course)
     description = models.TextField(default="No description.")
     isbn = models.CharField(max_length=20,default=".")
