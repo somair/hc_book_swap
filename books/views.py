@@ -2,9 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from django.conf import settings
 from django.contrib.auth.models import User, AnonymousUser
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.mail import send_mail
 from django.http import HttpResponse
 from books.models import Book, Subject
 from books.forms import BookForm
+from books.utils import compose_message
 
 def index(request):
     book_list = Book.objects.filter(sold=False)
@@ -70,3 +72,16 @@ def delete_book(request, book_id):
     if request.user==book.listed_by:
         book.delete()
     return index(request)
+
+def contact_seller(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+    buyer = request.user
+    success = False
+    if not buyer.is_anonymous():
+        msg = compose_message(buyer, book)
+        seller = book.listed_by
+        send_mail("HC Book Swap Interest", msg,
+          "HC Book Swap <%s>" % settings.DEFAULT_FROM_EMAIL, [seller.email])
+        success = True
+    context_dict = {'success': success}
+    return render(request, 'books/contact_success.html', context_dict)

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="two columns">
+      <h3 class="secondary-heading">Contact</h3>
+    </div>
+    <div class="ten columns">
+        <p>
+            {% if success %}
+                Message successfully sent.
+            {% else %}
+                Message failed to be sent.
+            {% endif %}
+        </p>
+    </div>
+  </div>
+{% endblock %}

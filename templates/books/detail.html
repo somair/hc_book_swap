@@ -18,16 +18,16 @@
             <li><strong>Listing submitted:</strong> {{ book.submitted }}</li>
         </ul>
         {% if book.listed_by == user %}
-        <a href="{% url 'edit_book' book.id %}" class="hc-button">Edit Book</a>
+            <a href="{% url 'edit_book' book.id %}" class="hc-button">Edit Book</a>
         {% endif %}
     </div>
     <div class="two columns">
         <h5>${{ book.price }}</h5>
         {% if is_anonymous %}
             <p>For privacy purposes, you must login to contact the seller.</p>
-            <a href="#" class="hc-button hc-button-disabled">Contact Seller</a>
+            <a class="hc-button hc-button-disabled">Contact Seller</a>
         {% else %}
-            <a href="#" class="hc-button">Contact Seller</a>
+            <a href="{% url 'contact_seller' book.id %}" class="hc-button">Contact Seller</a>
         {% endif %}
     </div>
   </div>

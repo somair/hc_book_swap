@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'login',
     'django_unused_media',
     'captcha',
-    'imagekit'
+    'imagekit',
+    'anymail',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -139,7 +140,12 @@ STATIC_URL = '/static/'
 
 # HC_BOOKS CONSTANTS
 
-MAILGUN_API_KEY = secrets.MAILGUN_API_KEY
+ANYMAIL = {
+    'MAILGUN_API_KEY': secrets.MAILGUN_API_KEY,
+    'MAILGUN_SENDER_DOMAIN': secrets.MAILGUN_SENDER_DOMAIN,
+}
+EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+DEFAULT_FROM_EMAIL = 'outgoing@%s' % secrets.MAILGUN_SENDER_DOMAIN
 
 CONDITION_CHOICES = (
     ('New','New'),

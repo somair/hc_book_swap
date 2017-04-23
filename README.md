@@ -12,6 +12,7 @@ The following features will be implemented when the project is completed.
 - Client-side filtering of books by subject, condition, and price
 - Search by ISBN, course name, and course ID
 - Integration of Mailgun API for contacting sellers when users express interest in a listed book
+- ReCaptcha integration for verification of forms
 - Population script to generate Course objects from current year's textbook spreadsheet
 
 ## Getting Started
@@ -33,6 +34,7 @@ Create a secrets.py file in hc_books and add the following information
 
 ```
 MAILGUN_API_KEY = 'YourAPIKeyHere'
+MAILGUN_SENDER_DOMAIN = 'YourDomainHere'
 SECRET_KEY = 'YourSecretKey'
 RECAPTCHA_PUBLIC_KEY = 'YourReCaptchaSiteKey'
 RECAPTCHA_PRIVATE_KEY = 'YourReCaptchaSecretKey'
