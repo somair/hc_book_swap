@@ -83,5 +83,7 @@ def contact_seller(request, book_id):
         send_mail("HC Book Swap Interest", msg,
           "HC Book Swap <%s>" % settings.DEFAULT_FROM_EMAIL, [seller.email])
         success = True
+    else:
+        return index(request)
     context_dict = {'success': success}
     return render(request, 'books/contact_success.html', context_dict)

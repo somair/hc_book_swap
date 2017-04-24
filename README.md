@@ -9,7 +9,7 @@ The following features will be implemented when the project is completed.
 - Ability to add and crop book listing thumbnails
 - Verification of ISBN numbers
 - Ability to easily edit and remove listings
-- Client-side filtering of books by subject, condition, and price
+- Filtering of books by subject, condition, and price
 - Search by ISBN, course name, and course ID
 - Integration of Mailgun API for contacting sellers when users express interest in a listed book
 - ReCaptcha integration for verification of forms
