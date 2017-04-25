@@ -4,9 +4,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
+from books.utils import get_image_file_path
 #from imagekit.models import ImageSpecField
 #from imagekit.processors import ResizeToFill
-# https://github.com/matthewwithanm/django-imagekit << implement tomorrow in class
+#https://github.com/matthewwithanm/django-imagekit << implement tomorrow in class
 from datetime import datetime
 
 class Subject(models.Model):
@@ -33,9 +34,9 @@ class Book(models.Model):
     isbn = models.CharField(max_length=20,default=".")
     listed_by = models.ForeignKey(User, default=1)
     name = models.CharField(max_length=200)
-    price = models.IntegerField(default=0)
+    price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     sold = models.BooleanField(default=False)
     submitted = models.DateField(default=datetime.today)
-    thumbnail = models.ImageField(upload_to="books/thumbnails", default='books/thumbnails/default_book_image.png')
+    thumbnail = models.ImageField(upload_to=get_image_file_path, default='books/thumbnails/default_book_image.png')
     def __str__(self):
         return 'Title: %s, Condition: %s, Price %s, ISBN %s' % (self.name, self.condition, self.price, self.isbn)
