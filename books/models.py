@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
-from books.utils import get_image_file_path
+from books.utils import get_image_file_path, check_isbn_length, check_isbn_validity
 #from imagekit.models import ImageSpecField
 #from imagekit.processors import ResizeToFill
 #https://github.com/matthewwithanm/django-imagekit << implement tomorrow in class
@@ -31,7 +31,7 @@ class Book(models.Model):
     condition = models.CharField(max_length=20, choices=settings.CONDITION_CHOICES)
     course = models.ForeignKey(Course)
     description = models.TextField(default="No description.")
-    isbn = models.CharField(max_length=20,default=".")
+    isbn = models.CharField(max_length=20, default=".", validators=[check_isbn_length, check_isbn_validity])
     listed_by = models.ForeignKey(User, default=1)
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
