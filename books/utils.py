@@ -48,4 +48,4 @@ def get_image_file_path(instance, filename):
 # Helper functions for dealing with views
 
 def compose_message(buyer, book):
-    return "%s (%s) would like to buy your book %s which you listed for $%s on HC Book Swap." % (buyer.username, buyer.email, book.name, book.price)
+    return "%s (%s) would like to buy your book %s (ID: %s) which you listed for $%s on HC Book Swap." % (buyer.username, buyer.email, book.name, book.id, book.price)
