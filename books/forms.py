@@ -13,8 +13,8 @@ class BookForm(forms.ModelForm):
     course = forms.ModelChoiceField(queryset=Course.objects.order_by('-name'), help_text="Class/Course")
     name = forms.CharField(max_length=200, help_text="Title")
     description = forms.CharField(widget=forms.Textarea, help_text="Add any additional details you would like to provide.", required=False)
-    isbn = forms.CharField(initial=0, help_text="ISBN")
-    price = forms.DecimalField(initial=0, max_digits=5, decimal_places=2, help_text="Price")
+    isbn = forms.CharField(help_text="ISBN")
+    price = forms.DecimalField(max_digits=5, decimal_places=2, help_text="Price")
     sold = forms.BooleanField(initial=False, help_text="Has the book been sold? Leave the box unchecked if the book is available.", required=False)
     thumbnail = forms.ImageField(help_text="Please submit an image of the book.", required=False)
     
