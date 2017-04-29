@@ -2,6 +2,7 @@
 $primary-color: #D12E2A;
 $secondary-color: #575757;
 $disabled-color: #BABABA;
+$error-color: #AB4646;
 $heading-font-family: 'Montserrat', 'Roboto', Arial, sans-serif !important;
 $paragraph-font-family: 'Roboto', Arial, sans-serif !important;
 $shadow-color: rgba(0,0,0,.15);
@@ -39,7 +40,7 @@ a{
     text-decoration: underline;
   }
 }
-p, a, span, input[type=submit], li, strong{
+p, a, span, input[type=submit], li, strong, button{
   font-family: $paragraph-font-family;
 }
 p, a, span, input[type=submit], li{
@@ -65,7 +66,7 @@ p, a, span, input[type=submit], li{
 }
 
 // Buttons
-a.hc-button, input[type=submit]{
+a.hc-button, input[type=submit], button.hc-button{
     background: $primary-color;
     border: 1px solid $shadow-color;
     border-radius: 2px;
@@ -132,6 +133,12 @@ a.hc-button-disabled {
 
 .hc-form{
   margin: 0px auto;
+}
+
+.error-list{
+  background: lighten($error-color, 40%);
+  border: 1px solid $error-color;
+  padding: 0.1em;
 }
 
 // Footer styling

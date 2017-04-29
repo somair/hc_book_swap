@@ -25,7 +25,7 @@ a {
     color: #D12E2A;
     text-decoration: underline; }
 
-p, a, span, input[type=submit], li, strong {
+p, a, span, input[type=submit], li, strong, button {
   font-family: "Roboto", Arial, sans-serif !important; }
 
 p, a, span, input[type=submit], li {
@@ -46,7 +46,7 @@ p, a, span, input[type=submit], li {
   padding-top: 2rem;
   box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.15); }
 
-a.hc-button, input[type=submit] {
+a.hc-button, input[type=submit], button.hc-button {
   background: #D12E2A;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 2px;
@@ -56,7 +56,7 @@ a.hc-button, input[type=submit] {
   white-space: nowrap;
   text-decoration: none;
   transition: 200ms ease; }
-  a.hc-button:hover, input[type=submit]:hover {
+  a.hc-button:hover, input[type=submit]:hover, button.hc-button:hover {
     background: #d8403d;
     box-shadow: 2px 4px 3px 0 rgba(0, 0, 0, 0.15); }
 
@@ -100,6 +100,11 @@ a.hc-button-disabled {
 
 .hc-form {
   margin: 0px auto; }
+
+.error-list {
+  background: #ecd1d1;
+  border: 1px solid #AB4646;
+  padding: 0.1em; }
 
 footer span a {
   padding-right: 2em; }
