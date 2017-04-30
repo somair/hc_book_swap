@@ -3,7 +3,7 @@
 {% block title %}Edit Book{% endblock %}
 
 {% block body %}
-    <h5 class="secondary-heading">Edit Book</h5>
+    <h4 class="secondary-heading">Edit Book</h5>
         <form id="category_form" method="post" action="{% url 'edit_book' book.id %}" enctype='multipart/form-data'>
             {% csrf_token %}
             {% for hidden in form.hidden_fields %}
