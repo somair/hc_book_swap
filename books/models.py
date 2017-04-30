@@ -5,9 +5,8 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.staticfiles.templatetags.staticfiles import static
 from books.utils import get_image_file_path, check_isbn_length, check_isbn_validity
-#from imagekit.models import ImageSpecField
-#from imagekit.processors import ResizeToFill
-#https://github.com/matthewwithanm/django-imagekit << implement tomorrow in class
+from imagekit.models import ImageSpecField
+from imagekit.processors import Thumbnail
 from datetime import datetime
 
 class Subject(models.Model):
@@ -37,6 +36,11 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     sold = models.BooleanField(default=False)
     submitted = models.DateField(default=datetime.today)
-    thumbnail = models.ImageField(upload_to=get_image_file_path, default='books/thumbnails/default_book_image.png')
+    thumbnail = models.ImageField(upload_to=get_image_file_path, default='books/default/default_book_image.png')
+    square_thumbnail = ImageSpecField(source='thumbnail',
+                                      processors=[Thumbnail(370,370)],
+                                      format='JPEG',
+                                      options={'quality': 60})
+
     def __str__(self):
         return 'Title: %s, Condition: %s, Price %s, ISBN %s' % (self.name, self.condition, self.price, self.isbn)

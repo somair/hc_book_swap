@@ -9,3 +9,5 @@
 hc_books/secrets.py
 *.css.map
 .sass-cache/
+media/CACHE/*
+media/books/thumbnails/*
