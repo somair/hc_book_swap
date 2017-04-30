@@ -10,7 +10,12 @@
     <div class="ten columns">
       <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {% for field in form %}
+          <div class="errors">{{ field.errors }}</div>
+          <h6 class="hc-help-text">{{ field.label_tag }} </h6>
+          {{ field }}
+          <br />
+        {% endfor %}
         <button class="hc-button" type="submit">Register</button>
       </form>
     </div>

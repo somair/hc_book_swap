@@ -56,7 +56,7 @@ p, a, span, input[type=submit], li{
 }
 
 .hc-help-text{
-  color: $disabled-color;
+  color: darken($disabled-color, 10%);
 }
 
 // Top menu styling
