@@ -3,24 +3,30 @@
 {% block title %}Add Book{% endblock %}
 
 {% block body %}
-    <h5 class="secondary-heading">Add Book</h5>
-    {% if user.is_authenticated %}
-        <form id="category_form" class="hc-form" method="post" action="/add_book/" enctype='multipart/form-data'>
-            {% csrf_token %}
-            {% for hidden in form.hidden_fields %}
-                {{ hidden }}
-            {% endfor %}
-            {% for field in form.visible_fields %}
-                <div class="errors">{{ field.errors }}</div>
-                <h6 class="hc-help-text">{{ field.help_text }} </h6>
-                {{ field }}
-                <br />
-            {% endfor %}
-            <input type="submit" name="submit" value="Create Book Listing" />
-        </form>
-    {% else %}
-        <h5 class="secondary-heading">Only registered users may submit book listings.</h5>
-        <a href="% url 'register' %}" class="hc-button">Register</a>
-        <a href="{% url 'login' %}" class="hc-button">Login</a>
-    {% endif %}
+    <div class="row">
+        <div class="two columns">
+          <h3 class="secondary-heading">Add Book</h3>
+        </div>
+        <div class="ten columns">
+            {% if user.is_authenticated %}
+                <form id="category_form" class="hc-form" method="post" action="/add_book/" enctype='multipart/form-data'>
+                    {% csrf_token %}
+                    {% for hidden in form.hidden_fields %}
+                        {{ hidden }}
+                    {% endfor %}
+                    {% for field in form.visible_fields %}
+                        <div class="errors">{{ field.errors }}</div>
+                        <h6 class="hc-help-text">{{ field.help_text }} </h6>
+                        {{ field }}
+                        <br />
+                    {% endfor %}
+                    <input type="submit" name="submit" value="Create Book Listing" />
+                </form>
+            {% else %}
+                <h5 class="secondary-heading">Only registered users may submit book listings.</h5>
+                <a href="% url 'register' %}" class="hc-button">Register</a>
+                <a href="{% url 'login' %}" class="hc-button">Login</a>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}
