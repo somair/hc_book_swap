@@ -9,7 +9,7 @@
         </div>
         <div class="ten columns">
             {% if user.is_authenticated %}
-                <form id="category_form" class="hc-form" method="post" action="/add_book/" enctype='multipart/form-data'>
+                <form class="hc-book-form" method="post" action="/add_book/" enctype='multipart/form-data'>
                     {% csrf_token %}
                     {% for hidden in form.hidden_fields %}
                         {{ hidden }}

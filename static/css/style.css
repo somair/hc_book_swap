@@ -25,7 +25,7 @@ a {
     color: #D12E2A;
     text-decoration: underline; }
 
-p, a, span, input[type=submit], li, strong, button {
+p, a, span, input[type=submit], li, strong, button, form {
   font-family: "Roboto", Arial, sans-serif !important; }
 
 p, a, span, input[type=submit], li {
@@ -98,8 +98,8 @@ a.hc-button-disabled {
   text-align: center;
   padding: 2em 2em 2em 2em; }
 
-.hc-form {
-  margin: 0px auto; }
+form.hc-book-form label {
+  display: inline; }
 
 .error-list {
   background: #ecd1d1;

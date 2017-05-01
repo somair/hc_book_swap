@@ -40,7 +40,7 @@ a{
     text-decoration: underline;
   }
 }
-p, a, span, input[type=submit], li, strong, button{
+p, a, span, input[type=submit], li, strong, button, form{
   font-family: $paragraph-font-family;
 }
 p, a, span, input[type=submit], li{
@@ -131,8 +131,10 @@ a.hc-button-disabled {
 
 // Forms
 
-.hc-form{
-  margin: 0px auto;
+form.hc-book-form{
+  label{
+    display: inline;
+  }
 }
 
 .error-list{
