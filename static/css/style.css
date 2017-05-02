@@ -69,6 +69,29 @@ a.hc-button-disabled {
     background: #BABABA;
     box-shadow: none; }
 
+.hc-checkbox input[type="checkbox"] {
+  display: none; }
+
+.hc-checkbox span {
+  cursor: pointer; }
+
+.hc-checkbox input[type="checkbox"] + span:before {
+  border: 1px solid #BABABA;
+  border-radius: 3px;
+  content: "\00a0";
+  display: inline-block;
+  margin: 0 .8em 0 0;
+  padding: 0;
+  width: 1.25em;
+  height: 1.25em; }
+
+.hc-checkbox input[type="checkbox"]:checked + span:before {
+  border: 1px solid #D12E2A;
+  background: #D12E2A;
+  color: #fff;
+  content: "\2713";
+  text-align: center; }
+
 .item-display {
   padding: 1em 1em; }
 
