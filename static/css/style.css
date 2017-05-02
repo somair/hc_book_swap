@@ -129,6 +129,9 @@ form.hc-book-form label {
   border: 1px solid #AB4646;
   padding: 0.1em; }
 
+@media (max-width: 1366px) {
+  .two .hc-button {
+    line-height: 2.6em; } }
 footer span a {
   padding-right: 2em; }
 

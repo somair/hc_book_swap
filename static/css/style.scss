@@ -170,6 +170,14 @@ form.hc-book-form{
   padding: 0.1em;
 }
 
+// my_books styles
+
+@media (max-width: 1366px) {
+  .two .hc-button{
+    line-height: 2.6em;
+  }
+}
+
 // Footer styling
 footer span a{
   padding-right: 2em;
