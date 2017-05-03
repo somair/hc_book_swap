@@ -97,7 +97,7 @@ a.hc-button-disabled {
 
 .book-thumbnail {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
-  width: 70%; }
+  width: 80%; }
 
 .book-image {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
@@ -119,7 +119,7 @@ a.hc-button-disabled {
 
 .pagination {
   text-align: center;
-  padding: 2em 2em 2em 2em; }
+  padding: 2em; }
 
 form.hc-book-form label {
   display: inline; }
