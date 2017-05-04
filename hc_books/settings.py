@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'captcha',
     'imagekit',
     'anymail',
+    'django_filters'
 ]
 
 MIDDLEWARE_CLASSES = [
