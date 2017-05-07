@@ -108,7 +108,8 @@ a.hc-button-disabled {
   padding-top: 1em; }
 
 .book-listing {
-  box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.13);
+  margin-top: 1em;
   padding: 2em 2em 2em 2em; }
   .book-listing .book-name, .book-listing .book-author {
     display: inline; }

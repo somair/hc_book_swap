@@ -139,7 +139,8 @@ a.hc-button-disabled {
     padding-top: 1em;
 }
 .book-listing{
-  box-shadow: 0 1px 4px 1px $shadow-color;
+  box-shadow: 0 1px 5px 1px $shadow-color;
+  margin-top: 1em;
   padding: 2em 2em 2em 2em;
   .book-name, .book-author{
     display: inline;
