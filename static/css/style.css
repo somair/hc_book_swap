@@ -1,5 +1,5 @@
 .content {
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   margin: 0px auto;
   padding-left: 2em;
   padding-right: 2em; }
@@ -29,6 +29,7 @@ p, a, span, input[type=submit], li, strong, button, form {
   font-family: "Roboto", Arial, sans-serif !important; }
 
 p, a, span, input[type=submit], li {
+  color: #6E6868;
   font-weight: 400; }
 
 .title-heading a {
@@ -44,13 +45,13 @@ p, a, span, input[type=submit], li {
 
 .top-menu {
   padding: 2em 1em 1em 2em;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.13); }
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12); }
 
 a.hc-button, input[type=submit], button.hc-button {
   background: #D12E2A;
-  border: 1px solid rgba(0, 0, 0, 0.13);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 2px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.13);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   color: #fff;
   padding: .5em 1em;
   white-space: nowrap;
@@ -58,7 +59,7 @@ a.hc-button, input[type=submit], button.hc-button {
   transition: 200ms ease; }
   a.hc-button:hover, input[type=submit]:hover, button.hc-button:hover {
     background: #d8403d;
-    box-shadow: 2px 4px 3px 0 rgba(0, 0, 0, 0.13); }
+    box-shadow: 2px 4px 3px 0 rgba(0, 0, 0, 0.12); }
 
 a.hc-button-disabled {
   background: #BABABA;
@@ -96,11 +97,11 @@ a.hc-button-disabled {
   padding: 1em 1em; }
 
 .book-thumbnail {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.13);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   width: 75%; }
 
 .book-image {
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.13);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   width: 90%; }
 
 .book-properties {
@@ -108,7 +109,7 @@ a.hc-button-disabled {
   padding-top: 1em; }
 
 .book-listing {
-  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 1px 8px 1px rgba(0, 0, 0, 0.12);
   margin-top: 1em;
   padding: 2em 2em 2em 2em; }
   .book-listing .book-name, .book-listing .book-author {
