@@ -9,13 +9,12 @@
         <link rel="icon" href="{% static 'images/favicon.ico' %}" />
     </head>
     <body>
-        <div class="content">
-            <div class="row top-menu"> <!-- Start row -->
-                <div>
-                    <div class="two columns">
+            <div class="top-menu"> <!-- Start row -->
+                <div class="row">
+                    <div class="nine columns">
                         <h5 class="title-heading"><a href="{% url 'index' %}">HC Book Swap</a></h5>
                     </div>
-                    <div class="ten columns">
+                    <div class="three columns">
                         <a href="{% url 'add_book' %}" class="hc-button">Sell a Book</a>
                         {% if user.is_authenticated %}
                             <a href="{% url 'my_books' %}" class="hc-button">My Books</a>
@@ -27,6 +26,7 @@
                     </div>
                 </div>
             </div> <!-- End row -->
+        <div class="content">
             <div class="inner-content">
                 {% block body %}
                 {% endblock %}
