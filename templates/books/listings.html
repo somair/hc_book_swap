@@ -5,32 +5,22 @@
 {% block body %}
     <div class="row item-display">
         <!-- Start row -->
-        <div class="two columns">
+        <div class="two columns hc-filter">
             <h5 class="secondary-heading">Filter</h5>
-            <h6 class="secondary-heading">Subject</h6>
-            <form>
-                {% for subject in subjects %}
-                    <label value="{{ subject }}" class="hc-checkbox">
-                        <input type="checkbox"> <span>{{ subject }}</span>
-                        </input>
-                    </label>
-                {% endfor %}
-            </form>
-            <h6 class="secondary-heading">Condition</h6>
-            <form>
-                {% for condition in conditions %}
-                    <label value="{{ condition }}" class="hc-checkbox">
-                        <input type="checkbox"> <span>{{ condition }}</span>
-                        </input>
-                    </label>
-                {% endfor %}
+            <form action="/" method="get">
+                {{ filter.form.as_p }}
+                <input type="submit" />
             </form>
         </div>
         <div class="ten columns">
              <h5 class="secondary-heading">Listings</h5>
-            {% for book in books %}
-                {% include 'books/snippets/listing.html' with book=book public=True %}
-            {% endfor %}
+             {% if filter.qs %}
+                 {% for book in filter.qs %}
+                    {% include 'books/snippets/listing.html' with book=book public=True %}
+                 {% endfor %}
+             {% else %}
+                 <p>No results found.</p>
+             {% endif %}
         </div>
     </div> <!-- End row -->
 

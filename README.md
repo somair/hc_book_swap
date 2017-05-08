@@ -9,8 +9,7 @@ The following features will be implemented when the project is completed.
 - Automatic cropping of non-square thumbnails
 - Verification of ISBN numbers
 - Ability to easily edit and remove listings
-- Filtering of books by subject, condition, and price
-- Search by ISBN, course name, and course ID
+- Filtering of books by name, author, condition, ISBN, and price
 - Integration of Anymail + Mailgun for contacting sellers when users express interest in a listed book
 - ReCaptcha integration for verification of forms
 - Population script to generate Course objects from current year's textbook spreadsheet

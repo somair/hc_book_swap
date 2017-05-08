@@ -6,23 +6,16 @@ from django.core.mail import send_mail
 from django.http import HttpResponse
 from books.models import Book, Subject
 from books.forms import BookForm
+from books.filters import BookFilter
 from books.utils import compose_message
 
 def index(request):
     book_list = Book.objects.filter(sold=False)
-    subject_list = Subject.objects.all()
+    filter = BookFilter(request.GET, queryset=book_list)
     condition_list = (conditions[0] for conditions in settings.CONDITION_CHOICES)
-    paginator = Paginator(book_list, 10)
-    page = request.GET.get('page')
-    try:
-        books = paginator.page(page)
-    except PageNotAnInteger:
-        books = paginator.page(1)
-    except EmptyPage:
-        books = paginator.page(paginator.num_pages)
-    context_dict = {'books': books,
+    context_dict = {'books': book_list,
         'conditions': condition_list,
-        'subjects': subject_list,
+        'filter': filter,
     }
     return render(request, 'books/listings.html', context_dict)
 

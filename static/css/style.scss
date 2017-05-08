@@ -29,6 +29,16 @@ $shadow-color: rgba(0,0,0,.12);
   padding: 3em 1em 5em 1em;
 }
 
+@media (max-width: 850px) {
+  .content{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  .inner-content{
+    padding: 0;
+  }
+}
+
 // Typography
 h1, h2, h3, h4, h5, h6{
   font-family: $heading-font-family;
@@ -67,6 +77,18 @@ p, a, span, input[type=submit], li{
   box-shadow: 0px 1px 5px $shadow-color;
 }
 
+@media (max-width: 3000px) {
+  .top-menu .top-links{
+    float: right;
+  }
+}
+
+@media (max-width: 770px) {
+  .top-links a{
+    line-height: 2.6em;
+  }
+}
+
 // Buttons
 a.hc-button, input[type=submit], button.hc-button{
     background: $primary-color;
@@ -96,6 +118,15 @@ a.hc-button-disabled {
 }
 
 // Index page book listings filter styling
+
+.hc-filter{
+  input[type=email],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text],,input[type=url],select,textarea{
+    width: 70%;
+  }
+  .helptext{
+    display: block;
+  }
+}
 
 .hc-checkbox input[type="checkbox"], #thumbnail-clear_id{
   display: none;
@@ -143,7 +174,7 @@ a.hc-button-disabled {
 .book-listing{
   box-shadow: 0 1px 8px 1px $shadow-color;
   margin-top: 1em;
-  padding: 2em 2em 2em 2em;
+  padding: 1.5em 1.5em 1.5em 1.5em;
   .book-name, .book-author{
     display: inline;
   }
@@ -184,4 +215,5 @@ form.hc-book-form{
 // Footer styling
 footer span a{
   padding-right: 2em;
+  text-decoration: underline;
 }

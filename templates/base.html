@@ -11,18 +11,20 @@
     <body>
             <div class="top-menu"> <!-- Start row -->
                 <div class="row">
-                    <div class="nine columns">
+                    <div class="seven columns">
                         <h5 class="title-heading"><a href="{% url 'index' %}">HC Book Swap</a></h5>
                     </div>
-                    <div class="three columns">
-                        <a href="{% url 'add_book' %}" class="hc-button">Sell a Book</a>
-                        {% if user.is_authenticated %}
-                            <a href="{% url 'my_books' %}" class="hc-button">My Books</a>
-                            <a href="{% url 'logout' %}" class="hc-button">Logout</a>
-                        {% else %}
-                            <a href="{% url 'register' %}" class="hc-button">Register</a>
-                            <a href="{% url 'login' %}" class="hc-button">Login</a>
-                        {% endif %}
+                    <div class="five columns">
+                        <div class="top-links">
+                            <a href="{% url 'add_book' %}" class="hc-button">Sell a Book</a>
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'my_books' %}" class="hc-button">My Books</a>
+                                <a href="{% url 'logout' %}" class="hc-button">Logout</a>
+                            {% else %}
+                                <a href="{% url 'register' %}" class="hc-button">Register</a>
+                                <a href="{% url 'login' %}" class="hc-button">Login</a>
+                            {% endif %}
+                        </div>
                     </div>
                 </div>
             </div> <!-- End row -->

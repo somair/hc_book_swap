@@ -15,6 +15,13 @@
 .inner-content {
   padding: 3em 1em 5em 1em; }
 
+@media (max-width: 850px) {
+  .content {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
+
+  .inner-content {
+    padding: 0; } }
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", "Roboto", Arial, sans-serif !important; }
 
@@ -47,6 +54,12 @@ p, a, span, input[type=submit], li {
   padding: 2em 1em 1em 2em;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12); }
 
+@media (max-width: 3000px) {
+  .top-menu .top-links {
+    float: right; } }
+@media (max-width: 770px) {
+  .top-links a {
+    line-height: 2.6em; } }
 a.hc-button, input[type=submit], button.hc-button {
   background: #D12E2A;
   border: 1px solid rgba(0, 0, 0, 0.12);
@@ -69,6 +82,11 @@ a.hc-button-disabled {
   a.hc-button-disabled:hover {
     background: #BABABA;
     box-shadow: none; }
+
+.hc-filter input[type=email], .hc-filter input[type=number], .hc-filter input[type=password], .hc-filter input[type=search], .hc-filter input[type=tel], .hc-filter input[type=text], .hc-filter input[type=url], .hc-filter select, .hc-filter textarea {
+  width: 70%; }
+.hc-filter .helptext {
+  display: block; }
 
 .hc-checkbox input[type="checkbox"], #thumbnail-clear_id {
   display: none; }
@@ -111,7 +129,7 @@ a.hc-button-disabled {
 .book-listing {
   box-shadow: 0 1px 8px 1px rgba(0, 0, 0, 0.12);
   margin-top: 1em;
-  padding: 2em 2em 2em 2em; }
+  padding: 1.5em 1.5em 1.5em 1.5em; }
   .book-listing .book-name, .book-listing .book-author {
     display: inline; }
   .book-listing .book-author {
@@ -135,6 +153,7 @@ form.hc-book-form label {
   .two .hc-button {
     line-height: 2.6em; } }
 footer span a {
-  padding-right: 2em; }
+  padding-right: 2em;
+  text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */
