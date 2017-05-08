@@ -9,10 +9,11 @@ class BookFilter(django_filters.FilterSet):
     class Meta:
         model = Book
         fields = {
+            'price': ['range'],
             'name': ['contains'],
             'condition': ['exact'],
-            'price': ['range'],
             'isbn': ['exact'],
             'author': ['contains']
         }
         exclude = ['course', 'thumbnail', 'description', 'listed_by', 'sold', 'submitted']
+        strict = 'IGNORE'
