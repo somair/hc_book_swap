@@ -21,6 +21,21 @@
              {% else %}
                  <p>No results found.</p>
              {% endif %}
+             <div class="pagination">
+                <span class="hc-pagination-links">
+                    {% if books.has_previous %}
+                        <a href="?page={{ books.previous_page_number }}">previous</a>
+                    {% endif %}
+            
+                    <span class="current">
+                        Page {{ books.number }} of {{ books.paginator.num_pages }}.
+                    </span>
+            
+                    {% if books.has_next %}
+                        <a href="?page={{ books.next_page_number }}">next</a>
+                    {% endif %}
+                </span>
+            </div>
         </div>
     </div> <!-- End row -->
 

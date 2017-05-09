@@ -12,8 +12,18 @@ from books.utils import compose_message
 def index(request):
     book_list = Book.objects.filter(sold=False)
     filter = BookFilter(request.GET, queryset=book_list)
+    
+    paginator = Paginator(book_list, 15)
+    page = request.GET.get('page')
+    try:
+        books = paginator.page(page)
+    except PageNotAnInteger:
+        books = paginator.page(1)
+    except EmptyPage:
+        books = paginator.page(paginator.num_pages)
+    
     condition_list = (conditions[0] for conditions in settings.CONDITION_CHOICES)
-    context_dict = {'books': book_list,
+    context_dict = {'books': books,
         'conditions': condition_list,
         'filter': filter,
     }
