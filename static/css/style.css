@@ -121,6 +121,10 @@ a.hc-button-disabled {
   text-align: center;
   padding: 2em; }
 
+.hc-pagination-links a {
+  text-decoration: underline;
+  padding: 1em; }
+
 form.hc-book-form label {
   display: inline; }
 

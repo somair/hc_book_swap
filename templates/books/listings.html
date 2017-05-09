@@ -24,15 +24,15 @@
              <div class="pagination">
                 <span class="hc-pagination-links">
                     {% if books.has_previous %}
-                        <a href="?page={{ books.previous_page_number }}">previous</a>
+                        <a href="?page={{ books.previous_page_number }}"><</a>
                     {% endif %}
             
                     <span class="current">
-                        Page {{ books.number }} of {{ books.paginator.num_pages }}.
+                        Page {{ books.number }} of {{ books.paginator.num_pages }}
                     </span>
             
                     {% if books.has_next %}
-                        <a href="?page={{ books.next_page_number }}">next</a>
+                        <a href="?page={{ books.next_page_number }}">></a>
                     {% endif %}
                 </span>
             </div>

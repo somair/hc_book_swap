@@ -12,8 +12,8 @@ from books.utils import compose_message
 def index(request):
     book_list = Book.objects.filter(sold=False)
     filter = BookFilter(request.GET, queryset=book_list)
-    
-    paginator = Paginator(book_list, 15)
+    # fix pagination. it's broken!!! displays every book on every page rather than properly paginate
+    paginator = Paginator(book_list, 2)
     page = request.GET.get('page')
     try:
         books = paginator.page(page)
