@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+
 {% block title %}HC Book Swap{% endblock %}
 
 {% block body %}
@@ -15,7 +16,7 @@
         <div class="ten columns">
              <h5 class="secondary-heading">Listings</h5>
              {% if filter.qs %}
-                 {% for book in filter.qs %}
+                 {% for book in books %}
                     {% include 'books/snippets/listing.html' with book=book public=True %}
                  {% endfor %}
              {% else %}
