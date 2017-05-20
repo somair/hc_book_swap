@@ -34,7 +34,6 @@ class Book(models.Model):
     listed_by = models.ForeignKey(User, default=1)
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    sold = models.BooleanField(default=False)
     submitted = models.DateField(default=datetime.today)
     thumbnail = models.ImageField(upload_to=get_image_file_path, default='books/default/default_book_image.png')
     square_thumbnail = ImageSpecField(source='thumbnail',

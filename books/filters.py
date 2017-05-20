@@ -13,5 +13,5 @@ class BookFilter(django_filters.FilterSet):
     class Meta:
         model = Book
         fields = ['name', 'price', 'condition', 'isbn', 'author']
-        exclude = ['course', 'thumbnail', 'description', 'listed_by', 'sold', 'submitted']
+        exclude = ['course', 'thumbnail', 'description', 'listed_by', 'submitted']
         strict = 'IGNORE'

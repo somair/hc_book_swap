@@ -19,6 +19,7 @@
         </ul>
         {% if book.listed_by == user %}
             <a href="{% url 'edit_book' book.id %}" class="hc-button">Edit Book</a>
+            <a href="{% url 'delete_book' book.id %}" class="hc-button">Delete</a>
         {% endif %}
     </div>
     <div class="two columns">

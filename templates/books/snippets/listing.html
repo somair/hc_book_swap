@@ -18,11 +18,6 @@
                 <h5 class="secondary-heading book-price">${{ book.price }}</h5>
                 <a href="{% url 'detail' book.id %}" class="hc-button">Buy</a>
             {% else %}
-                {% if book.sold %}
-                    <strong>Sold</strong>
-                {% else %}
-                    <strong>Not Sold</strong>
-                {% endif %}
                 <h5 class="secondary-heading book-price">${{ book.price }}</h5>
                 <a href="{% url 'edit_book' book.id %}" class="hc-button">Edit</a>
                 <a href="{% url 'delete_book' book.id %}" class="hc-button">Delete</a>
