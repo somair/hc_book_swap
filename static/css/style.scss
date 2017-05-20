@@ -123,18 +123,24 @@ a.hc-button-disabled {
   input[type=email],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text],,input[type=url],select,textarea{
     width: 70%;
   }
+  #id_price_0, #id_price_1{
+    width: 30%;
+  }
   .helptext{
     display: block;
   }
+  div{
+    margin-bottom: 0.5em;
+  }
 }
 
-/*#id_condition input[type=checkbox], */#thumbnail-clear_id {
+.hc-filter-condition input[type=checkbox], #thumbnail-clear_id {
   display: none; }
 
-/*#id_condition label, */label[for="thumbnail-clear_id"] {
+.hc-filter-condition label, label[for="thumbnail-clear_id"] {
   cursor: pointer; }
 
-#thumbnail-clear_id + label:before/*, #id_condition label:before*/ {
+#thumbnail-clear_id + label:before, .hc-filter-condition input[type=checkbox] + label:before {
   border: 1px solid #BABABA;
   border-radius: 3px;
   content: "\00a0";
@@ -144,7 +150,7 @@ a.hc-button-disabled {
   width: 1.3em;
   height: 1.3em; }
 
-#thumbnail-clear_id:checked + label:before{
+#thumbnail-clear_id:checked + label:before, .hc-filter-condition input[type=checkbox]:checked + label:before{
   border: 1px solid #D12E2A;
   background: #D12E2A;
   color: #fff;

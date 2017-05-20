@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 {% block title %}HC Book Swap{% endblock %}
 
 {% block body %}
@@ -9,7 +8,21 @@
         <div class="two columns hc-filter">
             <h5 class="secondary-heading">Filter</h5>
             <form action="/" method="get">
-                {{ filter.form.as_p }}
+                {% for field in filter.form %}
+                    <div class="hc-filter-{{field.name}}">
+                        <h6 class="hc-help-text">{{ field.label }}</h6>
+                        {% if field.name == 'condition' %}
+                           {% for checkbox in field %}
+                               {{ checkbox.tag }}
+                                <label class="hc-checkbox" for="{{checkbox.id_for_label}}">
+                                    <span>{{ checkbox.choice_label }}</span>
+                                </label>
+                            {% endfor %}
+                        {% else %}
+                            {{ field }}
+                        {% endif %}
+                    </div>
+                {% endfor %}
                 <input type="submit" />
             </form>
         </div>

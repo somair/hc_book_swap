@@ -85,18 +85,20 @@ a.hc-button-disabled {
 
 .hc-filter input[type=email], .hc-filter input[type=number], .hc-filter input[type=password], .hc-filter input[type=search], .hc-filter input[type=tel], .hc-filter input[type=text], .hc-filter input[type=url], .hc-filter select, .hc-filter textarea {
   width: 70%; }
+.hc-filter #id_price_0, .hc-filter #id_price_1 {
+  width: 30%; }
 .hc-filter .helptext {
   display: block; }
+.hc-filter div {
+  margin-bottom: 0.5em; }
 
-/*#id_condition input[type=checkbox], */
-#thumbnail-clear_id {
+.hc-filter-condition input[type=checkbox], #thumbnail-clear_id {
   display: none; }
 
-/*#id_condition label, */
-label[for="thumbnail-clear_id"] {
+.hc-filter-condition label, label[for="thumbnail-clear_id"] {
   cursor: pointer; }
 
-#thumbnail-clear_id + label:before {
+#thumbnail-clear_id + label:before, .hc-filter-condition input[type=checkbox] + label:before {
   border: 1px solid #BABABA;
   border-radius: 3px;
   content: "\00a0";
@@ -106,7 +108,7 @@ label[for="thumbnail-clear_id"] {
   width: 1.3em;
   height: 1.3em; }
 
-#thumbnail-clear_id:checked + label:before {
+#thumbnail-clear_id:checked + label:before, .hc-filter-condition input[type=checkbox]:checked + label:before {
   border: 1px solid #D12E2A;
   background: #D12E2A;
   color: #fff;
