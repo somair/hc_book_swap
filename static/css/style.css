@@ -163,7 +163,7 @@ form.hc-book-form label {
 @media (max-width: 1366px) {
   .two .hc-button {
     line-height: 2.6em; } }
-footer span a {
+footer span a, .hc-link {
   padding-right: 2em;
   text-decoration: underline; }
 
