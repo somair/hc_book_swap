@@ -45,6 +45,12 @@ DB_USER = 'username'
 DB_PASSWORD = 'password'
 DB_HOST = 'host'
 DB_PORT = '1234' # Add your port number here
+
+# AWS
+AWS_ACCESS_KEY_ID = 'accesskeyid'
+AWS_SECRET_ACCESS_KEY = 'secretaccesskey'
+AWS_STORAGE_BUCKET_NAME = 'bucketname'
+AWS_S3_REGION_NAME = 'regionname'
 ```
 
 Then run 

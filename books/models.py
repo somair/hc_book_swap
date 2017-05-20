@@ -35,7 +35,7 @@ class Book(models.Model):
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     submitted = models.DateField(default=datetime.today)
-    thumbnail = models.ImageField(upload_to=get_image_file_path, default='books/default/default_book_image.png')
+    thumbnail = models.ImageField(upload_to=get_image_file_path)
     square_thumbnail = ImageSpecField(source='thumbnail',
                                       processors=[Thumbnail(370,370)],
                                       format='JPEG',
