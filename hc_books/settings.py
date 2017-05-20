@@ -91,8 +91,12 @@ WSGI_APPLICATION = 'hc_books.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': secrets.DB_NAME,
+        'USER': secrets.DB_USER,
+        'PASSWORD': secrets.DB_PASSWORD,
+        'HOST': secrets.DB_HOST,
+        'PORT': secrets.DB_PORT,
     }
 }
 
