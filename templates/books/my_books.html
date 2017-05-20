@@ -9,6 +9,7 @@
         <span><strong>Email:</strong> {{ user.email }}</span>
     </div>
     <div class="ten columns">
+        <p class="warning">Please delete listings for sold books.</p>
         {% for book in books %}
                 {% include 'books/snippets/listing.html' with book=book public=False %}
         {% endfor %}

@@ -35,7 +35,7 @@ $shadow-color: rgba(0,0,0,.12);
     padding-right: 0.5em;
   }
   .inner-content{
-    padding: 0;
+    padding: 2em 0 0 0;
   }
 }
 
@@ -208,10 +208,12 @@ form.hc-book-form{
   }
 }
 
-.error-list{
+.errorlist, .warning{
   background: lighten($error-color, 40%);
   border: 1px solid $error-color;
-  padding: 0.1em;
+  color: $error-color;
+  list-style: none;
+  padding: 1em;
 }
 
 // my_books styles
