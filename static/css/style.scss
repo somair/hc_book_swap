@@ -128,6 +128,29 @@ a.hc-button-disabled {
   }
 }
 
+/*#id_condition input[type=checkbox], */#thumbnail-clear_id {
+  display: none; }
+
+/*#id_condition label, */label[for="thumbnail-clear_id"] {
+  cursor: pointer; }
+
+#thumbnail-clear_id + label:before/*, #id_condition label:before*/ {
+  border: 1px solid #BABABA;
+  border-radius: 3px;
+  content: "\00a0";
+  display: inline-block;
+  margin: 0 .6em 0 0.6em;
+  padding: 0;
+  width: 1.3em;
+  height: 1.3em; }
+
+#thumbnail-clear_id:checked + label:before{
+  border: 1px solid #D12E2A;
+  background: #D12E2A;
+  color: #fff;
+  content: "\2713";
+  text-align: center; }
+
 .hc-filter ul#id_condition {
   list-style: none;
 }
