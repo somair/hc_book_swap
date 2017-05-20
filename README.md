@@ -46,3 +46,9 @@ DB_PASSWORD = 'password'
 DB_HOST = 'host'
 DB_PORT = '1234' # Add your port number here
 ```
+
+Then run 
+
+```
+python manage.py collectstatic
+```

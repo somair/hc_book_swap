@@ -17,3 +17,5 @@ urlpatterns = [
     url(r'^disclaimer/', TemplateView.as_view(template_name='static_pages/disclaimer.html'), name='disclaimer'),
     url(r'^', include('books.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = TemplateView.as_view(template_name='static_pages/404.html')
