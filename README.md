@@ -29,6 +29,12 @@ Install requirements
 pip install requirements.txt
 ```
 
+You need:
+* A Mailgun account and API key
+* A ReCaptcha API key
+* An AWS account and S3 bucket
+* A Heroku account
+
 Create a secrets.py file in hc_books and add the following information
 
 ```
