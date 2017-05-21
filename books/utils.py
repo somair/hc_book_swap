@@ -34,7 +34,7 @@ def check_isbn_validity(isbn):
                sum += digits[i]
             else:
                 sum += (3*digits[i])
-        if(digits[12] != 10 - (sum % 10)):
+        if(digits[12] != (10 - sum) % 10):
             raise ValidationError(
                 _('%(isbn)s is not a valid ISBN-13 - wrong check digit'),
                 params={'isbn': isbn},
