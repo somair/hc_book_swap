@@ -10,7 +10,7 @@ from books.filters import BookFilter
 from books.utils import compose_message
 
 def index(request):
-    book_filter = BookFilter(request.GET, queryset=Book.objects.all())
+    book_filter = BookFilter(request.GET, queryset=Book.objects.order_by('-submitted'))
     paginator = Paginator(book_filter.qs, 10)
     page = request.GET.get('page')
     try:
