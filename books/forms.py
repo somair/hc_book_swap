@@ -10,7 +10,7 @@ class BookForm(forms.ModelForm):
     author = forms.CharField(max_length=128, help_text="Author")
     captcha = ReCaptchaField()
     condition = forms.ChoiceField(help_text="Condition", choices=settings.CONDITION_CHOICES)
-    course = forms.ModelChoiceField(queryset=Course.objects.order_by('-name'), help_text="Class/Course")
+    course = forms.ModelChoiceField(queryset=Course.objects.order_by('name'), help_text="Class/Course")
     name = forms.CharField(max_length=200, help_text="Title")
     description = forms.CharField(widget=forms.Textarea, help_text="Add any additional details you would like to provide.", required=False)
     isbn = forms.CharField(help_text="ISBN")

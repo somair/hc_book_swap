@@ -2,7 +2,7 @@ from django.contrib import admin
 from books.models import Book, Subject, Course
 
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('subject', 'name', 'teacher',)
+    list_display = ('subject', 'name',)
     list_display_links = ('name',)
     search_fields = ('name', 'teacher',)
 

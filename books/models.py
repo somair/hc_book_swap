@@ -19,9 +19,8 @@ class Subject(models.Model):
 class Course(models.Model):
     subject = models.ForeignKey(Subject)
     name = models.CharField(max_length=128)
-    teacher = models.CharField(max_length=128, default="N/A")
     def __str__(self):
-        return '%s taught by %s' % (self.name, self.teacher)
+        return self.name
     def get_books(self):
         return self.book_set
 
