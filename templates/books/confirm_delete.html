@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete{{ book.name }} | HC Book Swap{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="two columns">
+        <h4 class="secondary-heading">Delete {{ book.name }}</h4>
+    </div>
+    <div class="ten columns">
+        <p class="warning">Are you sure you want to delete {{ book.name }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Delete Book Listing" />
+        </form>
+    </div>
+  </div>
+{% endblock %}

@@ -68,9 +68,12 @@ def edit_book(request, book_id):
 
 def delete_book(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
-    if request.user==book.listed_by:
+    if request.user != book.listed_by:
+        return redirect(index)
+    if request.method == 'POST':
         book.delete()
-    return redirect(my_books)
+        return redirect(my_books)
+    return render(request, 'books/confirm_delete.html', {'book': book})
 
 def contact_seller(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
